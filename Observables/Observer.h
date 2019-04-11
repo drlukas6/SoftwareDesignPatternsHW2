@@ -8,13 +8,11 @@
 class Subject;
 
 class Observer {
-private:
+protected:
     Subject *subject;
 public:
-    explicit Observer (Subject *subject);
     virtual void update() =0;
-protected:
-    Subject getSubject();
+    Subject *getSubject();
 };
 
 #endif //INC_2__LAB_OBSERVER_H

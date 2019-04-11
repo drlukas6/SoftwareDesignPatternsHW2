@@ -2,11 +2,13 @@
 // Created by Lukas Sestic on 2019-04-10.
 //
 
+#include <vector>
+
 #include "Subject.h"
 #include "Observer.h"
 
 void Subject::attach(Observer *observer) {
-    this->observers.emplace_back(observer)
+    this->observers.emplace_back(observer);
 }
 
 void Subject::broadcast() {
@@ -21,5 +23,5 @@ int Subject::getValue() {
 
 void Subject::setValue(int value) {
     this->value = value;
-    this->broadcast()
+    this->broadcast();
 }
