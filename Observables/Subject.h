@@ -18,6 +18,8 @@ public:
     void broadcast();
     int getValue();
     void setValue(int value);
+
+    virtual void startReading() =0;
 };
 
 #endif //INC_2__LAB_SUBJECT_H

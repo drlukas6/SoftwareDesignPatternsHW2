@@ -47,20 +47,20 @@ void getMedian(std::vector<int> &vector) {
 }
 
 int main() {
-    auto testSubject = new Subject();
-    auto testObserver = new NumberSequence(testSubject, [](std::vector<int> &vector) -> void {
-        printStats(vector);
-        getSum(vector);
-        getAvg(vector);
-        getMedian(vector);
-    });
-
-    for(int i = 0; i < 10; ++i) {
-        int a;
-        std::cout << "Insert n: ";
-        std::cin >> a;
-        if (a == -1) break;
-        testSubject->setValue(a);
-    }
+//    auto testSubject = new Subject();
+//    auto testObserver = new NumberSequence(testSubject, [](std::vector<int> &vector) -> void {
+//        printStats(vector);
+//        getSum(vector);
+//        getAvg(vector);
+//        getMedian(vector);
+//    });
+//
+//    for(int i = 0; i < 10; ++i) {
+//        int a;
+//        std::cout << "Insert n: ";
+//        std::cin >> a;
+//        if (a == -1) break;
+//        testSubject->setValue(a);
+//    }
     return 0;
 }

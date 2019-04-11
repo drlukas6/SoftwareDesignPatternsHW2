@@ -12,6 +12,6 @@ add_executable(4_Zadatak DistributionTester.cpp)
 add_executable(5_Zadatak StreamObservers.cpp
         Observables/Subject.cpp Observables/Subject.h
         Observables/Observer.cpp Observables/Observer.h
-        Observables/NumberSequence.cpp Observables/NumberSequence.h Observables/KeyboardSubject.cpp Observables/KeyboardSubject.h)
+        Observables/NumberSequence.cpp Observables/NumberSequence.h Observables/KeyboardSubject.cpp Observables/KeyboardSubject.h Observables/FileSubject.cpp Observables/FileSubject.h)
 
 include_directories(Strategies Observables)

@@ -5,9 +5,11 @@
 #ifndef INC_2__LAB_KEYBOARDSUBJECT_H
 #define INC_2__LAB_KEYBOARDSUBJECT_H
 
+#include "Subject.h"
 
-class KeyboardSubject {
-
+class KeyboardSubject: public Subject {
+public:
+    void startReading() override;
 };
 
 
