@@ -50,8 +50,8 @@ void getMedian(std::vector<int> &vector) {
 
 int main() {
     auto input = std::ifstream("input.txt");
-    auto keyboardSubject = new FileSubject(input);
-    auto observer = new NumberSequence(keyboardSubject, [](std::vector<int> &vector) -> void {
+    auto fileSubject = new FileSubject(input);
+    auto observer = new NumberSequence(fileSubject, [](std::vector<int> &vector) -> void {
         printStats(vector);
         getSum(vector);
         getAvg(vector);
