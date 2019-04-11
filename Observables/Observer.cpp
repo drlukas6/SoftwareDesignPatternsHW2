@@ -8,3 +8,7 @@
 Subject *Observer::getSubject() {
     return subject;
 }
+
+void Observer::startListening() {
+    subject->startReading();
+}

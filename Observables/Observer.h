@@ -11,8 +11,9 @@ class Observer {
 protected:
     Subject *subject;
 public:
-    virtual void update() =0;
     Subject *getSubject();
+    void startListening();
+    virtual void update() =0;
 };
 
 #endif //INC_2__LAB_OBSERVER_H

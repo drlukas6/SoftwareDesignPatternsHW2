@@ -8,15 +8,17 @@
 #include <chrono>
 #include <ctime>
 #include <numeric>
+#include <fstream>
 
-#include "Subject.h"
+#include "KeyboardSubject.h"
+#include "FileSubject.h"
 #include "NumberSequence.h"
 
 void printStats(std::vector<int> &vector) {
     std::ofstream statFile("stats.txt", std::ios_base::app);
     auto sysClock = std::chrono::system_clock::now();
     auto dateTime = std::chrono::system_clock::to_time_t(sysClock);
-    statFile << std::ctime(&dateTime) << "\n";
+    statFile << std::ctime(&dateTime);
     statFile << "=================================\n";
     for(auto const &number: vector) {
         statFile << number << "\n";
@@ -47,20 +49,16 @@ void getMedian(std::vector<int> &vector) {
 }
 
 int main() {
-//    auto testSubject = new Subject();
-//    auto testObserver = new NumberSequence(testSubject, [](std::vector<int> &vector) -> void {
-//        printStats(vector);
-//        getSum(vector);
-//        getAvg(vector);
-//        getMedian(vector);
-//    });
-//
-//    for(int i = 0; i < 10; ++i) {
-//        int a;
-//        std::cout << "Insert n: ";
-//        std::cin >> a;
-//        if (a == -1) break;
-//        testSubject->setValue(a);
-//    }
+    auto input = std::ifstream("input.txt");
+    auto keyboardSubject = new FileSubject(input);
+    auto observer = new NumberSequence(keyboardSubject, [](std::vector<int> &vector) -> void {
+        printStats(vector);
+        getSum(vector);
+        getAvg(vector);
+        getMedian(vector);
+        std::cout << "---------------------------\n";
+    });
+
+    observer->startListening();
     return 0;
 }
